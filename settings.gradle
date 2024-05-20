@@ -1,1 +1,4 @@
 rootProject.name = 'MyPay'
+
+include 'common'
+include 'membership-service'

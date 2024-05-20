@@ -1,13 +1,13 @@
-package org.example.mypay;
+package org.example.common;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyPayApplication {
+public class CommonApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MyPayApplication.class, args);
+        SpringApplication.run(CommonApplication.class, args);
     }
 
 }

@@ -4,9 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.example.common.UseCase;
 import org.example.membershipservice.adapter.out.persistence.MemberShipEntity;
 import org.example.membershipservice.adapter.out.persistence.MemberShipMapper;
-import org.example.membershipservice.application.port.in.RegisterMemberShipCommand;
-import org.example.membershipservice.application.port.in.RegisterMemberShipUseCase;
-import org.example.membershipservice.application.port.out.RegisterMemberShipPort;
+import org.example.membershipservice.application.port.in.ModifyMemberShipCommand;
+import org.example.membershipservice.application.port.in.ModifyMemberShipUseCase;
+import org.example.membershipservice.application.port.out.ModifyMemberShipPort;
 import org.example.membershipservice.domain.Membership;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,14 +14,15 @@ import org.springframework.transaction.annotation.Transactional;
 @UseCase
 @Transactional
 @RequiredArgsConstructor
-public class RegisterMemberShipService implements RegisterMemberShipUseCase {
+public class ModifyMemberShipService implements ModifyMemberShipUseCase {
 
-    private final RegisterMemberShipPort registerMemberShipPort;
+    private final ModifyMemberShipPort modifyMemberShipPort;
     private final MemberShipMapper memberShipMapper;
 
     @Override
-    public Membership registerMemberShip(RegisterMemberShipCommand command) {
-        MemberShipEntity memberShipEntity = registerMemberShipPort.createMemberShip(
+    public Membership modifyMembership(ModifyMemberShipCommand command) {
+        MemberShipEntity memberShipEntity = modifyMemberShipPort.ModifyMemberShip(
+                new Membership.MemberShipId(command.getMemberShipId()),
                 new Membership.MemberShipName(command.getName()),
                 new Membership.MemberShipEmail(command.getEmail()),
                 new Membership.MemberShipAddress(command.getAddress()),

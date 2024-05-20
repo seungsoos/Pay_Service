@@ -1,9 +1,9 @@
 package org.example.membershipservice.adapter.in.web;
 
 import lombok.RequiredArgsConstructor;
+import org.example.common.WebAdapter;
 import org.example.membershipservice.application.port.in.RegisterMemberShipCommand;
 import org.example.membershipservice.application.port.in.RegisterMemberShipUseCase;
-import org.example.membershipservice.common.WebAdapter;
 import org.example.membershipservice.domain.Membership;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +18,6 @@ public class RegisterMemberShipController {
 
     @PostMapping("/membership/register")
     public Membership registerMemberShip(@RequestBody RegisterMemberShipRequest request) {
-        System.out.println("request = " + request);
         RegisterMemberShipCommand command = RegisterMemberShipCommand.builder()
                 .name(request.getName())
                 .email(request.getEmail())

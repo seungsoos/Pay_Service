@@ -1,5 +1,4 @@
-package org.example.membershipservice.common;
-
+package org.example.common;
 
 import jakarta.validation.*;
 

@@ -1,11 +1,10 @@
 package org.example.membershipservice.application.port.in;
 
-import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.membershipservice.common.SelfValidating;
+import org.example.common.SelfValidating;
 
 @Builder
 @Data

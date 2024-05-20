@@ -1,4 +1,4 @@
-package org.example.membershipservice.common;
+package org.example.common;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Component;
@@ -7,13 +7,13 @@ import java.lang.annotation.*;
 
 /**
  * 핵사고날 아키텍처의
- * INPUT Adapter를 의미하기위한 어노테이션 정의
+ * PORT를 의미하기위한 어노테이션 정의
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
-public @interface WebAdapter {
+public @interface UseCase {
 
     /**
      * The value may indicate a suggestion for a logical component name,
