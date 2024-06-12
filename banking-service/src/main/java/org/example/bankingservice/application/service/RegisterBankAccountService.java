@@ -27,7 +27,7 @@ public class RegisterBankAccountService implements RegisterBankAccountUseCase {
     public RegisteredBankAccount registerBankAccount(RegisterBankAccountCommand command) {
 
         //command.getMembershipId
-        // 정사에여부를 Membership-service 에 요청확인해야함.
+        // 정상 회원 여부를 Membership-service 에 요청확인해야함.
 
         // 1. 등록된 계좌인지 확인
         BankAccount bankAccountInfo = requestBankAccountInfoPort.getBankAccountInfo(new GetBankAccountRequest(command.getBankName(), command.getBankAccountNumber()));
